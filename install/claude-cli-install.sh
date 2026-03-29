@@ -14,13 +14,16 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt install -y git
+$STD apt install -y \
+  git \
+  build-essential \
+  python3
 msg_ok "Installed Dependencies"
 
 NODE_VERSION="22" setup_nodejs
 
 msg_info "Installing Claude CLI"
-$STD npm install -g @anthropic-ai/claude-code
+$STD npm install -g --no-fund --no-audit @anthropic-ai/claude-code
 msg_ok "Installed Claude CLI $(claude --version)"
 
 msg_info "Setting up Workspace"
