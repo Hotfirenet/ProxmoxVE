@@ -14,28 +14,16 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt install -y \
-  curl \
-  git \
-  ca-certificates \
-  gnupg
+$STD apt install -y git
 msg_ok "Installed Dependencies"
 
-msg_info "Installing Node.js 22"
-mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
-  | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" \
-  >/etc/apt/sources.list.d/nodesource.list
-$STD apt update
-$STD apt install -y nodejs
-msg_ok "Installed Node.js $(node --version)"
+NODE_VERSION="22" setup_nodejs
 
 msg_info "Installing Claude CLI"
 $STD npm install -g @anthropic-ai/claude-code
 msg_ok "Installed Claude CLI $(claude --version)"
 
-msg_info "Setting up workspace"
+msg_info "Setting up Workspace"
 mkdir -p /opt/claude-workspace
 msg_ok "Workspace ready at /opt/claude-workspace"
 
