@@ -2,7 +2,7 @@
 source <(curl -fsSL https://raw.githubusercontent.com/Hotfirenet/ProxmoxVE/feat/claude-cli/misc/build.func)
 # Copyright (c) 2021-2026 Johan VIVIEN
 # Author: Johan VIVIEN
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/Hotfirenet/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/anthropics/claude-code
 
 APP="Claude CLI"
