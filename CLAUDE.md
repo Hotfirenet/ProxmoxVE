@@ -213,4 +213,4 @@ Flags: `trace` (set -x), `keep` (don't delete on failure), `pause`, `breakpoint`
 
 ## Website Metadata
 
-Do **not** add JSON files to the repo. Website metadata (description, logo, categories, etc.) is submitted via the **Report issue** button on the script's page at community-scripts.org.
+Add a `json/appname.json` file to the repo with metadata (name, slug, categories, description, logo, resources, etc.). See `docs/contribution/templates_json/AppName.json` for the structure. Submit it in the same PR as the scripts.
